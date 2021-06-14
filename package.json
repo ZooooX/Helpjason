@@ -4,7 +4,7 @@
   "description": "Wild Code School Test - Help Jason",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rémy Tupenot",

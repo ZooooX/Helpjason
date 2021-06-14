@@ -88,16 +88,16 @@ class AppComponent {
         });
     }
     onSubmit(memberForm) {
-        this.memberService.create(memberForm.controls.name.value).subscribe((res) => {
-            console.log(res);
+        this.memberService.create(memberForm.controls.name.value).subscribe((data) => {
+            console.log(data.message);
         }, (err) => {
             console.log(err);
         });
     }
     deleteItem(name) {
         console.log(name);
-        this.memberService.delete(name).subscribe((res) => {
-            console.log(res);
+        this.memberService.delete(name).subscribe((data) => {
+            console.log(data.message);
         }, (err) => {
             console.log(err);
         });
@@ -163,7 +163,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URI = "http://localhost:3000/api/member";
+//const API_URI = "http://localhost:3000/api/member";
+const API_URI = "https://helpjason.herokuapp.com3000/api/member";
 const httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'Content-Type': 'application/json' })
 };
@@ -245,9 +246,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class WebSocketService {
+    //readonly url : string = 'localhost:3100';
     constructor() {
-        //readonly url : string = '192.168.1.34:3000';
-        this.url = 'localhost:3100';
+        this.url = 'https://helpjason.herokuapp.com:3000';
         this.socket = Object(socket_io_client__WEBPACK_IMPORTED_MODULE_0__["io"])(this.url);
     }
     listen(eventName) {

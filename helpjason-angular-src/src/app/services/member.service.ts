@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import {IMember} from '../models/member.model';
 
 
-const API_URI = "http://localhost:3000/api/member";
+//const API_URI = "http://localhost:3000/api/member";
+const API_URI = "https://helpjason.herokuapp.com3000/api/member";
 
 const httpOptions = {
   headers : new HttpHeaders({'Content-Type' : 'application/json'})

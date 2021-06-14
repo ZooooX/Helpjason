@@ -14,7 +14,7 @@ exports.createMember = (req, res) => {
             memberServiceInstance.create(req.body.name)
                 .then((member) => {
                     console.log(`Member ${member.name} successfully created !`);
-                    return res.status(200);
+                    return res.status(200).send({message:`Member ${member.name} successfully created !`});
                 }).catch((err) => {
                     return res.status(500).send({message : err});
             });
@@ -38,7 +38,7 @@ exports.deleteMember = (req,res) => {
     memberServiceInstance.delete(req.params.name)
         .then(() => {
             console.log(`Member deleted !`);
-            return res.status(200);
+            return res.status(200).send({message:`Member ${req.params.name} successfully deleted !`});
         }).catch((err) => {
             return res.status(500).send({message : err});
         });

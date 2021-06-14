@@ -29,8 +29,8 @@ export class AppComponent implements OnInit{
   }
 
   onSubmit(memberForm : NgForm) : void{
-    this.memberService.create(memberForm.controls.name.value).subscribe((res) => {
-      console.log(res);
+    this.memberService.create(memberForm.controls.name.value).subscribe((data : any) => {
+      console.log(data.message);
     },
     (err) => {
       console.log(err);
@@ -39,8 +39,8 @@ export class AppComponent implements OnInit{
 
   deleteItem(name : string){
     console.log(name);
-    this.memberService.delete(name).subscribe((res) => {
-      console.log(res);
+    this.memberService.delete(name).subscribe((data : any) => {
+      console.log(data.message);
     },
     (err) => {
       console.log(err);

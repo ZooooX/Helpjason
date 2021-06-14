@@ -164,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //const API_URI = "http://localhost:3000/api/member";
-const API_URI = "https://helpjason.herokuapp.com:3000/api/member";
+const API_URI = "https://helpjason.herokuapp.com/api/member";
 const httpOptions = {
     headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpHeaders"]({ 'Content-Type': 'application/json' })
 };

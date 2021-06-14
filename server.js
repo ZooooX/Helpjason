@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 
 const port = process.env.PORT || 3000;
-const io_port = process.env.IO_PORT || 3100;
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -28,9 +27,7 @@ const server = app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 });
 
-var io = require('socket.io')(io_port,{
-  cors : "https://helpjason.herokuapp.com:3000"
-});
+var io = require('socket.io')(server);
 
 io.on("connection", (socket) => {
   console.log("A user connected !");

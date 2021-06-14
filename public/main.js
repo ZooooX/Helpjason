@@ -248,8 +248,7 @@ __webpack_require__.r(__webpack_exports__);
 class WebSocketService {
     //readonly url : string = 'localhost:3100';
     constructor() {
-        this.url = 'https://helpjason.herokuapp.com:3000';
-        this.socket = Object(socket_io_client__WEBPACK_IMPORTED_MODULE_0__["io"])(this.url);
+        this.socket = Object(socket_io_client__WEBPACK_IMPORTED_MODULE_0__["io"])();
     }
     listen(eventName) {
         return new rxjs__WEBPACK_IMPORTED_MODULE_1__["Observable"]((subscriber) => {

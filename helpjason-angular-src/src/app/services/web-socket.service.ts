@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 export class WebSocketService {
 
   socket : any;
-  readonly url : string = 'https://helpjason.herokuapp.com:3000';
+  
   //readonly url : string = 'localhost:3100';
 
   constructor() {
-    this.socket= io(this.url);
+    this.socket= io();
   }
 
   listen(eventName : string){

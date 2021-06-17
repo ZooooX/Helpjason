@@ -16,6 +16,8 @@ export class AppComponent implements OnInit{
   constructor(private memberService : MemberService, private io : WebSocketService){}
  
   ngOnInit() : void{
+
+    //Call getAll function to initiate pickedMembers array with current database
     this.memberService.getAll().subscribe((res) => {
       this.pickedMembers = res;
     },
@@ -23,11 +25,13 @@ export class AppComponent implements OnInit{
       console.log(err);
     });
 
+    //update the picked member array when the dataChange event is received
     this.io.listen("dataChange").subscribe((data : any) => {
       this.pickedMembers = data.data;
     });
   }
-
+  
+  //On form submit, call create request
   onSubmit(memberForm : NgForm) : void{
     this.memberService.create(memberForm.controls.name.value).subscribe((data : any) => {
       console.log(data.message);
@@ -35,8 +39,11 @@ export class AppComponent implements OnInit{
     (err) => {
       console.log(err);
     });
+    memberForm.controls.name.reset();
+
   }
 
+  //On delete submit, call delete request
   deleteItem(name : string){
     console.log(name);
     this.memberService.delete(name).subscribe((data : any) => {

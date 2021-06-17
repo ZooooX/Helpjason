@@ -2,8 +2,8 @@ const MemberService = require('../services/MemberService');
 
 const memberServiceInstance = new MemberService();
 
+//Call the create member function with the request body
 exports.createMember = (req, res) => {
-    console.log("name : " + req.body.name);
     memberServiceInstance.findByName(req.body.name)
         .then((member) => {
             if(member != null) {
@@ -24,7 +24,7 @@ exports.createMember = (req, res) => {
     
 }
 
-
+//Call the get all members function
 exports.getMembers = (req, res) => {
     memberServiceInstance.getAll()
         .then((members) => {
@@ -34,6 +34,7 @@ exports.getMembers = (req, res) => {
         });
 }
 
+//Call the delete function with the request param
 exports.deleteMember = (req,res) => {
     memberServiceInstance.delete(req.params.name)
         .then(() => {

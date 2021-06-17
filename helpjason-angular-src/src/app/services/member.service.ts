@@ -17,14 +17,17 @@ export class MemberService {
 
   constructor(private http : HttpClient) { }
 
+  //create request
   create(name : string){
     return this.http.post(API_URI,{name:name}, httpOptions);
   }
 
+  //read all request
   getAll(){
     return this.http.get<IMember[]>(API_URI, httpOptions);
   }
 
+  //delete request
   delete(name : string){
     return this.http.delete(`${API_URI}/${name}`, httpOptions);
   }

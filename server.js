@@ -5,6 +5,7 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+//express server
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
@@ -27,12 +28,15 @@ const server = app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 });
 
+
+//sockets
 var io = require('socket.io')(server);
 
 io.on("connection", (socket) => {
   console.log("A user connected !");
 });
 
+//Mongodb 
 const mongoose = require('mongoose');
 const Member = require('./app/models/member.model');
 const MemberService = require('./app/services/MemberService');

@@ -1,7 +1,9 @@
+//global in component
 h1, h2 {
   text-align: center;
 }
 
+//header
 header {
   background: #f4f4f4;
   text-align: center;
@@ -20,6 +22,7 @@ header {
   }
 }
 
+//main 
 main {
   max-width: 960px;
   margin: 0 auto;
@@ -62,7 +65,7 @@ main {
   }
 }
 
-
+//footer
 footer {
   display: flex;
   justify-content: center;

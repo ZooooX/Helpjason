@@ -14,7 +14,7 @@
     <h2>Ajouter un(e) Argonaute</h2>
     <form class="new-member-form" (ngSubmit)="onSubmit(memberForm)" #memberForm='ngForm'>
       <label for="name">Nom de l&apos;Argonaute</label>
-      <input id="name" name="name" type="text" placeholder="Charalampos" ngModel required/>
+      <input id="name" name="name" type="text" placeholder="Charalampos" autocomplete="off" ngModel required/>
       <input type="submit" value="Envoyer">
     </form>
   </div>
